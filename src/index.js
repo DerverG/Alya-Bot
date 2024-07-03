@@ -1,12 +1,11 @@
 require('dotenv').config()
 const { Client, Events } = require('discord.js')
-
-const token = process.env['DISCORD_TOKEN']
-const prefix = '!'
+const { intents, prefix, token } = require('./config.js')
+const helpCommand = require('./commands.js')
 
 // Crear cliente
 const client = new Client({
-    intents: 1536,
+    intents,
     presence: {
         status: 'online',
         activities: [{
@@ -18,7 +17,7 @@ const client = new Client({
 
 // Eventos
 client.on(Events.ClientReady, async () => {
-    console.log(`Conectado como  ${client.user.username}`);
+    console.log(`Conectado como ${client.user.username}`);
 })
 
 // Conectar cliente
