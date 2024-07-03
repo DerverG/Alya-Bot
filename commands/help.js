@@ -1,5 +1,5 @@
-const { MessageEmbed } = require('discord.js')
-const { prefix } = require('./config')
+const { EmbedBuilder } = require('discord.js')
+const { prefix } = require('../src/config')
 
 const commands = {
     'help': {
@@ -18,11 +18,11 @@ const commands = {
 }
 
 function helpCommand(message) {
-    const footerText = 'Requested by: ' + message.author.tag
+    const footerText = 'Pedido por: ' + message.author.tag
     const footerIcon = message.author.displayAvatarURL()
     const embed = new MessageEmbed()
         .setTitle('HELP MENU')
-        .setColor('GREEN')
+        .setColor('WHITE')
         .setFooter({ text: footerText, iconURL: footerIcon })
         .setTimestamp()
 

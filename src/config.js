@@ -8,5 +8,11 @@ module.exports = {
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.MessageContent,
-    ]
+    ],
+
+    Presence: {
+        status: "online",
+        name: "Music",
+        type: "LISTENING",
+      }
 }
